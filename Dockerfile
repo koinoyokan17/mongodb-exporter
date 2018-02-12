@@ -12,4 +12,4 @@ EXPOSE     9216
 RUN apk add --update ca-certificates
 COPY --from=builder /go/src/github.com/percona/mongodb_exporter/mongodb_exporter /usr/local/bin/mongodb_exporter
 
-ENTRYPOINT [ "mongodb_exporter", "-collect.collection", "-collect.database" ]
+ENTRYPOINT [ "mongodb_exporter", "-collect.database" ]
