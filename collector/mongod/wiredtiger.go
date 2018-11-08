@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package collector_mongod
+package mongod
 
 import (
 	"github.com/prometheus/client_golang/prometheus"
@@ -335,8 +335,8 @@ type WTConcurrentTransactionsTypeStats struct {
 }
 
 type WTConcurrentTransactionsStats struct {
-	Write *WTConcurrentTransactionsTypeStats `bson:"read"`
-	Read  *WTConcurrentTransactionsTypeStats `bson:"write"`
+	Read *WTConcurrentTransactionsTypeStats `bson:"read"`
+	Write  *WTConcurrentTransactionsTypeStats `bson:"write"`
 }
 
 func (stats *WTConcurrentTransactionsStats) Export(ch chan<- prometheus.Metric) {
